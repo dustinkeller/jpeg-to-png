@@ -7,14 +7,16 @@ try:
 except IndexError:
     exit("Please specify source directory followed by destination directory...")
 
-if not path.exists(dest):
-    mkdir(dest)
 
 try:
-    for file in listdir(src):
+    input_images = listdir(src)
+
+    if not path.exists(dest):
+        mkdir(dest)
+    
+    for file in input_images:
         img = Image.open(path.join(src,file))
-        img.save(path.join(dest, "".join([path.splitext(file)[0], ".png"])), "png")
+        output_path = path.join(dest, f"{path.splitext(file)[0]}.png")
+        img.save(output_path, "png")
 except FileNotFoundError:
-    exit("Please ensure source directory exists...")
-
-
+    exit("Please ensure source directory or destination parent directory exists...")
