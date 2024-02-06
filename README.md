@@ -6,10 +6,10 @@ When editing photos, sometimes we want to convert to file formats that suit our 
 Open the terminal, navigate to the directory containing this script, and run
 
 ```
-python3 converter.py "/your/source/folder/" "/your/destination/folder/"
+python3 converter.py /your/source/folder/ /your/destination/folder/
 ```
 
 Note that the destination directory can either already exist or be created automatically using the script. 
 
 ## Dependencies
-    - [PIL](https://github.com/python-pillow/Pillow)
+- [PIL](https://github.com/python-pillow/Pillow)
